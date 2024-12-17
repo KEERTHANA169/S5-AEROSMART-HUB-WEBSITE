@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Guide</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        /* Header Section */
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Logo */
+        header .logo img {
+            width: 55px;
+        }
+        /* Navigation */
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 10px;
+            transition: background 0.3s ease;
+        }
+        header nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        /* Main Content Section */
+        main {
+            padding: 40px 20px;
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .feature {
+            background-color: #004080;
+            color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .feature h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .feature p {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .img-container div {
+            width: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .img-container img:hover {
+            transform: scale(1.05);
+        }
+        /* Footer */
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Airport Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="bookaflight.html" class="booking-btn">Flight Booking</a></li>
+                <li><a href="guide.html">Guide</a></li> <!-- New link for Topic Guide -->
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li> <!-- New column for Flight Booking -->
+                <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="airport-info">
+            <h1>Welcome to the Airport Guide</h1>
+            <p>Explore the airport and its available amenities in real-time.</p>
+
+            <!-- Live Location Tracker -->
+            <div class="feature">
+                <h2>Live Location Tracker</h2>
+                <p>Find your location with our interactive airport map.</p>
+                <div class="map-container">
+                    <a href="https://www.changiairport.com/in/en/at-changi/map.html#t1.l2" target="_blank">
+                        <img src="456.png" alt="Airport Map">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Shops Near You -->
+            <div class="feature">
+                <h2>Shops Near You</h2>
+                <p>Find the best shopping options nearby with details on each shop.</p>
+                <div class="img-container">
+                    <div><img src="bou.jpg" alt="Fashion Boutique"><p>Fashion Boutique - Trendy apparel for all ages. Open 9 AM - 10 PM</p></div>
+                    <div><img src="ele.jpg" alt="Electronics Hub"><p>Electronics Hub - Latest gadgets and accessories. Open 8 AM - 10 PM</p></div>
+                    <div><img src="gf.png" alt="Gift Shop"><p>Gift Shop - Souvenirs and travel essentials. Open 24/7</p></div>
+                    <div><img src="duty.jpg" alt="Duty-Free Zone"><p>Duty-Free Zone - Tax-free products. Open 6 AM - 11 PM</p></div>
+                </div>
+            </div>
+
+            <!-- Baggage Facilities -->
+            <div class="feature">
+                <h2>Baggage Facilities</h2>
+                <p>Manage your baggage with ease. Collection available at Gate 12 and Terminal B.</p>
+                <div class="img-container">
+                    <div><img src="bag1.png" alt="Lost & Found"><p>Lost & Found - Assistance for misplaced items. Open 24/7</p></div>
+                    <div><img src="bag2.jpg" alt="Baggage Services"><p>Baggage Services - Wrapping, storage, and lockers. Available near Gate 5.</p></div>
+                </div>
+            </div>
+
+            <!-- Washroom Locations -->
+            <div class="feature">
+                <h2>Washrooms</h2>
+                <p>Convenient washroom facilities located across gates and terminals.</p>
+                <div class="img-container">
+                    <div><img src="Screenshot 2024-11-15 152932.png" alt="Washroom Facility"><p>Located at Gates 4, 10, and near Terminal C.</p></div>
+                </div>
+            </div>
+
+            <!-- Wheelchair Access -->
+            <div class="feature">
+                <h2>Wheelchair Assistance</h2>
+                <p>Available at main entry points, near Gate 3 and Terminal A.</p>
+                <div class="img-container">
+                    <div><img src="Screenshot 2024-11-15 153031.png" alt="Wheelchair Assistance"><p>For assistance, please approach our help desks.</p></div>
+                </div>
+            </div>
+
+            <!-- Other Facilities -->
+            <div class="feature">
+                <h2>Other Facilities</h2>
+                <p>Explore additional facilities for a comfortable airport experience.</p>
+                <div class="img-container">
+                    <div><img src="viplodge.jpeg" alt="Lounge"><p>VIP Lounges with refreshments and Wi-Fi.</p></div>
+                    <div><img src="wifi.png" alt="Wi-Fi"><p>Free Wi-Fi across the airport.</p></div>
+                    <div><img src="Screenshot 2024-11-15 153242.png" alt="Charging Stations"><p>Charging stations near Gates 2, 8, and 15.</p></div>
+                    <div><img src="kidsarea.webp" alt="Kids Play Area"><p>Fun play area for kids, located near Terminal B.</p></div>
+                    <div><img src="Screenshot 2024-11-15 153425.png" alt="Spa"><p>Relaxing spa services available at Terminal D.</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Airport Guide. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

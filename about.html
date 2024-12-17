@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aero SmartHub</title>
+    <style>
+        
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body */
+        body {
+            background-color: #f4f7fb;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #004080;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo img {
+            width: 50px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #ffcc00;
+            transform: translateY(-5px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* About Section */
+        .about-section {
+            background-image: url('b.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .about-section h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            max-width: 900px;
+            margin: 0 auto;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Mission & Vision Section */
+        .mission-vision {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .mission, .vision {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 48%;
+        }
+
+        .mission h2, .vision h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .mission p, .vision p {
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        
+
+        /* History Section */
+        .history-section {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .history-section h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #004080;
+        }
+
+        .history-section p {
+            font-size: 1.1em;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Team Section */
+        .team-section {
+            background-color: #f9fafb;
+        }
+
+        .team-section h2 {
+            color: #004080;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .team-cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .team-card {
+            width: 230px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .team-card h3 {
+            font-size: 1.3em;
+            color: #004080;
+        }
+
+        .team-card p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .tech-section {
+            position: relative;
+            padding: 50px 0;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .bg-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+            z-index: -1;
+        }
+        
+        .tech-background {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+        
+        .tech-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tech-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 18px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .tech-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+        
+        .tech-link:hover {
+            color: #ff6347; /* Or any accent color */
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            background-image: url('2b.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .achievements-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .achievements {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .achievement {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievement:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .achievement h3 {
+            font-size: 1.5em;
+            color: #004080;
+            margin-bottom: 15px;
+        }
+
+        .achievement p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 20px;
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            font-size: 1em;
+        }
+        /* Technology Stack Section */
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="logo.png" alt="Aero SmartHub Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="bookaflight.html" class="booking-btn">Flight Booking</a></li>
+                <li><a href="guide.html">Guide</a></li> <!-- New link for Topic Guide -->
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li> <!-- New column for Flight Booking -->
+                <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section section">
+        <h1>About Aero SmartHub</h1>
+        <p>Aero SmartHub is dedicated to revolutionizing airport experiences through innovative solutions and cutting-edge technologies. Join us as we reshape the way you navigate airports, making every journey seamless and enjoyable.</p>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision section">
+        <div class="mission" style="background-image: url('ms.png');">
+            <h2>Our Mission</h2>
+            <p>To enhance airport experiences by offering innovative solutions for travelers, staff, and airport operators, ensuring seamless and enjoyable journeys.</p>
+        </div>
+        <div class="vision" style="background-image: url('vs.jpg');">
+            <h2>Our Vision</h2>
+            <p>To become the world's leading provider of smart airport solutions, leveraging technology to create efficient, sustainable, and user-friendly airports.</p>
+        </div>
+    </section>
+
+    
+    <!-- Technology Stack Section -->
+<section class="tech-section section">
+    <!-- Background Image Wrapper -->
+    <div class="bg-wrapper">
+        <div class="bg-overlay"></div>
+        <div class="tech-background" style="background-image: url('3b.jpg');"></div>
+    </div>
+
+    <h2 class="tech-title">Our Technology Stack</h2>
+    
+    <!-- Technology Stack Items -->
+    <div class="tech-stack">
+        <div class="tech-item">
+            <a href="multi-language-support.html" class="tech-link">AI & Machine Learning</a>
+        </div>
+        <div class="tech-item">
+            <a href="ar-vr-integration.html" class="tech-link">AR/VR</a>
+        </div>
+        <div class="tech-item">
+            <a href="analytics-dashboard.html" class="tech-link">Data Analytics</a>
+        </div>
+        <div class="tech-item">
+            <a href="user-profiles-rewards.html" class="tech-link">Cloud Services</a>
+        </div>
+        <div class="tech-item">
+            <a href="index.html" class="tech-link">Web Development</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Achievements Section -->
+    <section class="achievements-section section">
+        <h2>Our Achievements</h2>
+        <div class="achievements">
+            <div class="achievement">
+                <h3>Innovation Award</h3>
+                <p>Received the Innovation Award for pioneering smart airport solutions.</p>
+            </div>
+            <div class="achievement">
+                <h3>Top Startup</h3>
+                <p>Named a top startup by TechCrunch for two consecutive years.</p>
+            </div>
+            <div class="achievement">
+                <h3>Global Expansion</h3>
+                <p>Expanded services to over 50 international airports.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Aero SmartHub. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

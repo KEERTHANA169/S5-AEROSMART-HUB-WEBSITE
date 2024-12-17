@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aero SmartHub - Services</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #004080;
+            color: white;
+        }
+
+        header .logo img {
+            width: 55px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Main Services Section */
+        .service-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f4f4f9;
+        }
+
+        .service-section h1 {
+            color: #004080;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .service-section p {
+            margin: 10px auto 40px;
+            font-size: 1.2em;
+            color: #333;
+            max-width: 700px;
+        }
+
+        /* Individual Service Cards */
+        .service-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .service-card img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .service-content {
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .service-content h2 {
+            font-size: 1.8em;
+            color: #004080;
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .cta-btn {
+            background-color: #ffcc00;
+            color: #004080;
+            padding: 10px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #ffd633;
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #004080;
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="logo.png" alt="Aero SmartHub Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="bookaflight.html" class="booking-btn">Flight Booking</a></li>
+                <li><a href="guide.html">Guide</a></li> <!-- New link for Topic Guide -->
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li> <!-- New column for Flight Booking -->
+                <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+            </ul>            
+        </nav>
+    </header>
+
+    <!-- Services Section -->
+    <section class="service-section">
+        <h1>Our Services</h1>
+        <p>Explore the range of services Aero SmartHub offers to enhance your airport experience, from real-time flight tracking to personalized assistance and beyond.</p>
+        
+        <!-- Service Card: Real-Time Flight Tracking -->
+        <div class="service-card">
+            <img src="Screenshot 2024-11-13 193135.png" alt="Real-Time Flight Tracking">
+            <div class="service-content">
+                <h2>Real-Time Flight Tracking</h2>
+                <p>Stay updated with the latest flight schedules, delays, and gate changes. Our real-time tracking feature ensures you’re always informed and on time.</p>
+                <a href="flight-tracking.html" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Service Card: Personalized Assistance -->
+        <div class="service-card">
+            <img src="Screenshot 2024-11-13 193412.png" alt="Personalized Assistance">
+            <div class="service-content">
+                <h2>Personalized Assistance</h2>
+                <p>From concierge services to custom travel solutions, our team is here to provide personalized support tailored to your unique travel needs.</p>
+                <a href="personal-assistance.html" class="cta-btn">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Service Card: Analytics Dashboard -->
+        <div class="service-card">
+            <img src="Screenshot 2024-11-13 193434.png" alt="Analytics Dashboard">
+            <div class="service-content">
+                <h2>Analytics Dashboard</h2>
+                <p>Get insights on airport traffic, flight trends, and service usage. Our analytics dashboard helps you make data-driven travel decisions.</p>
+                <a href="analytics-dashboard.html" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Service Card: User Profiles & Rewards System -->
+        <div class="service-card">
+            <img src="Screenshot 2024-11-13 193657.png" alt="User Profiles & Rewards">
+            <div class="service-content">
+                <h2>User Profiles & Rewards System</h2>
+                <p>Create a profile and earn rewards each time you fly with us. Enjoy exclusive perks and benefits as a frequent traveler with Aero SmartHub.</p>
+                <a href="user-profiles-rewards.html" class="cta-btn">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Service Card: AR/VR Integration -->
+        <div class="service-card">
+            <img src="Screenshot 2024-11-13 193736.png" alt="AR/VR Integration">
+            <div class="service-content">
+                <h2>AR/VR Integration</h2>
+                <p>Explore virtual airport tours and immersive experiences with our cutting-edge AR/VR technology, making your journey even more engaging.</p>
+                <a href="ar-vr-integration.html" class="cta-btn">Discover More</a>
+            </div>
+        </div>
+
+        <!-- Service Card: Multi-Language Support -->
+        <div class="service-card">
+            <img src="Screenshot 2024-11-13 193836.png" alt="Multi-Language Support">
+            <div class="service-content">
+                <h2>Multi-Language Support</h2>
+                <p>Access our platform in multiple languages, ensuring clear and easy communication for travelers from all around the world.</p>
+                <a href="multi-language-support.html" class="cta-btn">See Supported Languages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Aero SmartHub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

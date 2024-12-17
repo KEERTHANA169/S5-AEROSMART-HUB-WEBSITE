@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Flight Tracking | Aero SmartHub</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            flex: 1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #0059b3;
+        }
+
+        /* Flight Status Table */
+        .flight-status {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .flight-status th, .flight-status td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .flight-status th {
+            background-color: #004080;
+            color: white;
+        }
+
+        /* Status Indicator */
+        .status {
+            padding: 5px 10px;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .status.on-time {
+            background-color: #28a745;
+        }
+
+        .status.delayed {
+            background-color: #dc3545;
+        }
+
+        .status.cancelled {
+            background-color: #6c757d;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #004080;
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Real-Time Flight Tracking</h1>
+        <p>Stay updated with live flight information and schedules</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Enter flight number or airline" id="flightSearch">
+            <button onclick="searchFlight()">Search</button>
+        </div>
+
+        <!-- Flight Status Table -->
+        <table class="flight-status">
+            <thead>
+                <tr>
+                    <th>Flight</th>
+                    <th>Airline</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="flightResults">
+                <!-- Expanded List of Flight Rows -->
+                <tr>
+                    <td>AA123</td>
+                    <td>American Airlines</td>
+                    <td>New York (JFK)</td>
+                    <td>Los Angeles (LAX)</td>
+                    <td><span class="status on-time">On Time</span></td>
+                </tr>
+                <tr>
+                    <td>DL456</td>
+                    <td>Delta Airlines</td>
+                    <td>Atlanta (ATL)</td>
+                    <td>Miami (MIA)</td>
+                    <td><span class="status delayed">Delayed</span></td>
+                </tr>
+                <tr>
+                    <td>UA789</td>
+                    <td>United Airlines</td>
+                    <td>Chicago (ORD)</td>
+                    <td>San Francisco (SFO)</td>
+                    <td><span class="status on-time">On Time</span></td>
+                </tr>
+                <tr>
+                    <td>SW250</td>
+                    <td>Southwest Airlines</td>
+                    <td>Dallas (DAL)</td>
+                    <td>Denver (DEN)</td>
+                    <td><span class="status delayed">Delayed</span></td>
+                </tr>
+                <tr>
+                    <td>BA320</td>
+                    <td>British Airways</td>
+                    <td>London (LHR)</td>
+                    <td>New York (JFK)</td>
+                    <td><span class="status on-time">On Time</span></td>
+                </tr>
+                <tr>
+                    <td>LH112</td>
+                    <td>Lufthansa</td>
+                    <td>Frankfurt (FRA)</td>
+                    <td>Munich (MUC)</td>
+                    <td><span class="status cancelled">Cancelled</span></td>
+                </tr>
+                <tr>
+                    <td>AF950</td>
+                    <td>Air France</td>
+                    <td>Paris (CDG)</td>
+                    <td>Rome (FCO)</td>
+                    <td><span class="status on-time">On Time</span></td>
+                </tr>
+                <tr>
+                    <td>EK202</td>
+                    <td>Emirates</td>
+                    <td>Dubai (DXB)</td>
+                    <td>Sydney (SYD)</td>
+                    <td><span class="status delayed">Delayed</span></td>
+                </tr>
+                <tr>
+                    <td>QF11</td>
+                    <td>Qantas</td>
+                    <td>Sydney (SYD)</td>
+                    <td>Los Angeles (LAX)</td>
+                    <td><span class="status on-time">On Time</span></td>
+                </tr>
+                <tr>
+                    <td>NH10</td>
+                    <td>All Nippon Airways</td>
+                    <td>Tokyo (HND)</td>
+                    <td>New York (JFK)</td>
+                    <td><span class="status cancelled">Cancelled</span></td>
+                </tr>
+                <tr>
+                    <td>AI101</td>
+                    <td>Air India</td>
+                    <td>Delhi (DEL)</td>
+                    <td>London (LHR)</td>
+                    <td><span class="status on-time">On Time</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Aero SmartHub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Search Functionality -->
+    <script>
+        function searchFlight() {
+            const searchQuery = document.getElementById("flightSearch").value.toLowerCase();
+            const tableRows = document.querySelectorAll("#flightResults tr");
+            
+            tableRows.forEach(row => {
+                const flight = row.cells[0].textContent.toLowerCase();
+                const airline = row.cells[1].textContent.toLowerCase();
+                
+                if (flight.includes(searchQuery) || airline.includes(searchQuery)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

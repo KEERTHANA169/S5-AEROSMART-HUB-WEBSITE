@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Aero SmartHub</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* General Page Styling */
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .signup-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Header */
+        .signup-container h1 {
+            color: #004080;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .signup-container p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Input Fields */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #004080;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* Checkbox */
+        .terms {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .terms a {
+            color: #004080;
+            text-decoration: none;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        /* Social Sign-Up */
+        .social-signup {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        .social-signup button {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .social-signup .google {
+            background-color: #db4437;
+        }
+
+        .social-signup .google:hover {
+            background-color: #c53929;
+        }
+
+        .social-signup .facebook {
+            background-color: #4267B2;
+        }
+
+        .social-signup .facebook:hover {
+            background-color: #365899;
+        }
+
+        /* Sign-Up Button */
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .signup-btn:hover {
+            background-color: #ffcc00;
+            color: #004080;
+        }
+
+        /* Sign-In Link */
+        .signin-link {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .signin-link a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signin-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h1>Create an Account</h1>
+        <p>Join Aero SmartHub for an enhanced airport experience.</p>
+
+        <!-- Registration Form -->
+        <form>
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="email@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter a secure password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter your password" required>
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+            </div>
+
+            <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+
+        <!-- Social Sign-Up Options -->
+        <div class="social-signup">
+            <button class="google">Sign Up with Google</button>
+            <button class="facebook">Sign Up with Facebook</button>
+        </div>
+
+        <!-- Sign-In Link -->
+        <div class="signin-link">
+            Already have an account? <a href="signin.html">Sign In</a>
+        </div>
+    </div>
+
+</body>
+</html>

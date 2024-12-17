@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Utilization Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+
+        header {
+            background: linear-gradient(135deg, #005792, #007bb5);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004470;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background: url('airport-banner.jpg') no-repeat center/cover;
+            color: rgb(12, 12, 12);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #005792;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-card {
+            flex: 1 1 calc(33.33% - 20px);
+            background: #e9f7fd;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #005792;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #003c66;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #005792;
+            color: white;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .button-container a:hover {
+            background-color: #003c66;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+
+            .feature-card {
+                flex: 1;
+            }
+        }
+
+        .language-selector {
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        .language-selector select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #005792;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Airport Utilization Dashboard</h1>
+        <p>Your gateway to a seamless travel experience</p>
+    </header>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <label for="language-selector">Choose Language:</label>
+        <select id="language-selector" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#flights">Flights</a>
+        <a href="#guide">Guide</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h2 id="hero-title">Welcome to Your Personalized Airport Dashboard</h2>
+        <p id="hero-description">Track flights, explore amenities, and more!</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-plane"></i>
+                <h3 id="flight-tracking-title">Flight Tracking</h3>
+                <p id="flight-tracking-description">Stay updated with real-time flight details and changes.</p>
+                <div class="button-container">
+                    <a href="flight-tracking.html" target="_blank">Track Flights</a>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-book"></i>
+                <h3 id="guide-title">Guide</h3>
+                <p id="guide-description">Get a comprehensive guide for navigating the airport and finding amenities.</p>
+                <div class="button-container">
+                    <a href="guide.html" target="_blank">Visit Guide</a>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3 id="map-title">Interactive Map</h3>
+                <p id="map-description">Navigate your way through the airport with our interactive map.</p>
+                <div class="button-container">
+                    <a href="interactive-map.html" target="_blank">View Map</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Airport Utilization Dashboard | All Rights Reserved</p>
+    </div>
+
+    <script>
+        function changeLanguage() {
+            const language = document.getElementById("language-selector").value;
+            const translations = {
+                en: {
+                    heroTitle: "Welcome to Your Personalized Airport Dashboard",
+                    heroDescription: "Track flights, explore amenities, and more!",
+                    flightTracking: "Flight Tracking",
+                    flightTrackingDescription: "Stay updated with real-time flight details and changes.",
+                    guide: "Guide",
+                    guideDescription: "Get a comprehensive guide for navigating the airport and finding amenities.",
+                    map: "Interactive Map",
+                    mapDescription: "Navigate your way through the airport with our interactive map."
+                },
+                es: {
+                    heroTitle: "Bienvenido a su Panel de Utilización del Aeropuerto",
+                    heroDescription: "Siga vuelos, explore servicios y más.",
+                    flightTracking: "Seguimiento de Vuelos",
+                    flightTrackingDescription: "Manténgase actualizado con detalles y cambios en tiempo real.",
+                    guide: "Guía",
+                    guideDescription: "Obtenga una guía completa para navegar por el aeropuerto.",
+                    map: "Mapa Interactivo",
+                    mapDescription: "Navegue por el aeropuerto con nuestro mapa interactivo."
+                },
+                fr: {
+                    heroTitle: "Bienvenue sur votre tableau de bord aéroportuaire",
+                    heroDescription: "Suivez les vols, explorez les commodités et plus encore.",
+                    flightTracking: "Suivi des Vols",
+                    flightTrackingDescription: "Restez informé des détails et changements en temps réel.",
+                    guide: "Guide",
+                    guideDescription: "Obtenez un guide complet pour naviguer dans l'aéroport.",
+                    map: "Carte Interactive",
+                    mapDescription: "Naviguez dans l'aéroport avec notre carte interactive."
+                }
+            };
+
+            const text = translations[language];
+            document.getElementById("hero-title").textContent = text.heroTitle;
+            document.getElementById("hero-description").textContent = text.heroDescription;
+            document.getElementById("flight-tracking-title").textContent = text.flightTracking;
+            document.getElementById("flight-tracking-description").textContent = text.flightTrackingDescription;
+            document.getElementById("guide-title").textContent = text.guide;
+            document.getElementById("guide-description").textContent = text.guideDescription;
+            document.getElementById("map-title").textContent = text.map;
+            document.getElementById("map-description").textContent = text.mapDescription;
+        }
+    </script>
+</body>
+</html>

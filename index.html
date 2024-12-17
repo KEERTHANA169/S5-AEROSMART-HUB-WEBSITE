@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo img {
+            width: 120px; /* Reduced the logo size */
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Main Section */
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 20px;
+            gap: 30px;
+        }
+
+        .content-left {
+            width: 50%;
+            text-align: justify;
+        }
+
+        .content-left h1 {
+            font-size: 3em;
+            color: #004080;
+            margin-bottom: 20px;
+        }
+
+        .content-left p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .content-right {
+            width: 50%;
+        }
+
+        .ap-img {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        /* Enhanced Button */
+        .cta {
+            padding: 12px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta:hover {
+            background-color: #ffd633;
+            transform: scale(1.05);
+        }
+
+        .cta:active {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="bookaflight.html" class="booking-btn">Flight Booking</a></li>
+                <li><a href="guide.html">Guide</a></li> <!-- New link for Topic Guide -->
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li> <!-- New column for Flight Booking -->
+                <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+            </ul> 
+        </nav>
+    </header>
+    <main>
+        <div class="content-left">
+            <h1>AERO SMART HUB</h1>
+            <p>A passenger is an individual traveling on a vehicle or conveyance, such as an airplane, train, bus, or ship, but not in the capacity of a driver or operator. Passengers typically seek comfort and safety during their journey, and their experiences can be influenced by factors like amenities, services, and the efficiency of the transportation system. In the context of air travel, passengers are provided with a variety of services including check-in, baggage handling, in-flight entertainment, and refreshments.</p>
+            <button class="cta">Learn More</button>
+        </div>
+        <div class="content-right">
+            <img src="airplane.png" alt="airplane" class="ap-img">
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Analytics Dashboard | Aero SmartHub</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #005792;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Dashboard Container */
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* Card Style */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 45%;
+            min-width: 300px;
+        }
+
+        .card h2 {
+            color: #005792;
+        }
+
+        /* Chart Canvas */
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+    </style>
+    <!-- Import Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Real-Time Analytics Dashboard</h1>
+        <p>Monitoring key metrics and performance in real-time.</p>
+    </header>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard">
+        <!-- Line Chart Card -->
+        <div class="card">
+            <h2>Traffic Over Time</h2>
+            <div class="chart-container">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Gauge Chart Card -->
+        <div class="card">
+            <h2>System Performance</h2>
+            <div class="chart-container">
+                <canvas id="gaugeChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to Create Charts and Simulate Real-Time Data -->
+    <script>
+        // Set up the Line Chart
+        const lineCtx = document.getElementById('lineChart').getContext('2d');
+        const lineChart = new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: Array.from({length: 10}, (_, i) => `Minute ${i+1}`),
+                datasets: [{
+                    label: 'Active Users',
+                    data: Array.from({length: 10}, () => Math.floor(Math.random() * 100)),
+                    borderColor: '#007bff',
+                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        // Set up the Gauge Chart (using Doughnut as a substitute)
+        const gaugeCtx = document.getElementById('gaugeChart').getContext('2d');
+        const gaugeChart = new Chart(gaugeCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Performance', 'Remaining'],
+                datasets: [{
+                    label: 'Performance',
+                    data: [80, 20],
+                    backgroundColor: ['#28a745', '#e9ecef'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                circumference: 180,
+                rotation: 270,
+                plugins: {
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+                cutout: '80%',
+            }
+        });
+
+        // Simulate real-time updates for Line Chart
+        setInterval(() => {
+            const newPoint = Math.floor(Math.random() * 100);
+            lineChart.data.datasets[0].data.push(newPoint);
+            lineChart.data.datasets[0].data.shift(); // Remove oldest data point
+            lineChart.update();
+        }, 2000);
+
+        // Simulate real-time updates for Gauge Chart
+        setInterval(() => {
+            const newValue = Math.floor(Math.random() * 100);
+            gaugeChart.data.datasets[0].data = [newValue, 100 - newValue];
+            gaugeChart.update();
+        }, 3000);
+    </script>
+</body>
+</html>

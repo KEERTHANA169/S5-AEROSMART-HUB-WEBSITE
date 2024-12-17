@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aero SmartHub - Home</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Body and General Styles */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #004080;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo img {
+            width: 55px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('wbg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .hero .cta-btn {
+            background-color: #ffcc00;
+            color: #004080;
+            padding: 12px 25px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .hero .cta-btn:hover {
+            background-color: #ffd633;
+            transform: scale(1.05);
+        }
+
+        /* Key Services Section */
+        .services {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .services h2 {
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            color: #004080;
+        }
+
+        .service-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-item {
+            background-color: #f2f2f2;
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+        }
+
+        .service-item h3 {
+            margin-bottom: 10px;
+            color: #004080;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #e6f7ff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            color: #004080;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            gap: 20px;
+            overflow: auto;
+            padding: 10px;
+            scroll-behavior: smooth;
+        }
+
+        .testimonial-item {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            flex: 0 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .testimonial-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #004080;
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="logo.png" alt="Aero SmartHub Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="bookaflight.html" class="booking-btn">Flight Booking</a></li>
+                <li><a href="guide.html">Guide</a></li> <!-- New link for Topic Guide -->
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li> <!-- New column for Flight Booking -->
+                <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Aero SmartHub</h1>
+            <p>Your Ultimate Companion for a Seamless Airport Experience</p>
+            <a href="about.html" class="cta-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Key Services Section -->
+    <section class="services">
+        <h2>Our Key Services</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Real-Time Flight Tracking</h3>
+                <p>Stay updated with live flight information at your fingertips.</p>
+                <a href="flight-tracking.html" class="cta-btn">Track Flights</a>
+            </div>
+            <div class="service-item">
+                <h3>Personalized Assistance</h3>
+                <p>Enjoy tailor-made services for a stress-free airport experience.</p>
+                <a href="personal-assistance.html" class="cta-btn">Get Assistance</a>
+            </div>
+            <div class="service-item">
+                <h3>Analytics Dashboard</h3>
+                <p>Gain insights into airport facilities, trends, and more.</p>
+                <a href="analytics-dashboard.html" class="cta-btn">View Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-item">
+                <p>"Aero SmartHub made my airport experience smooth and hassle-free. Highly recommended!"</p>
+                <p>- Sarah L.</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"I love the real-time tracking feature! It keeps me informed about my flight schedule."</p>
+                <p>- James P.</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"The analytics dashboard provides useful insights that I didn't know I needed!"</p>
+                <p>- Priya M.</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"The analytics dashboard provides useful insights that I didn't know I needed!"</p>
+                <p>- Keerthana</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Aero SmartHub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Testimonials Slider -->
+    <script>
+        const slider = document.querySelector('.testimonial-slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 3;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+
+</body>
+</html>

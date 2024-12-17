@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR/VR Integration | Airport Utilization Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #005792;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #005792;
+            text-align: center;
+        }
+
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9f7fd;
+            border-radius: 8px;
+        }
+
+        .vr-box, .ar-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .vr-box iframe, .ar-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            padding: 15px 30px;
+            background-color: #005792;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #003c66;
+        }
+
+        /* Additional Styles for Interactive Elements */
+        .interactive-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .icon {
+            text-align: center;
+            width: 150px;
+            transition: transform 0.3s;
+        }
+
+        .icon img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>AR/VR Integration for Airport</h1>
+        <p>Experience the future of travel with immersive AR/VR technology</p>
+    </header>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2>Discover Airport Facilities in AR/VR</h2>
+
+        <!-- AR Navigation Section -->
+        <div class="section">
+            <h3>Augmented Reality (AR) Navigation</h3>
+            <p>Navigate the airport using AR. Scan key markers to view detailed directions and facility information in real-time on your device.</p>
+            <div class="ar-box">
+                <!-- AR Navigation Simulation Video -->
+                <iframe src="https://www.youtube.com/embed/gYi5P16l6eo" title="AR Navigation"></iframe>
+            </div>
+            <div class="interactive-icons">
+                <div class="icon">
+                    <img src="https://img.icons8.com/color/96/map.png" alt="Map Icon">
+                    <p>Gate Directions</p>
+                </div>
+                <div class="icon">
+                    <img src="https://img.icons8.com/color/96/information.png" alt="Info Icon">
+                    <p>Facilities Info</p>
+                </div>
+                <div class="icon">
+                    <img src="https://img.icons8.com/color/96/food.png" alt="Food Icon">
+                    <p>Nearby Food Courts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VR Virtual Tour Section -->
+        <div class="section">
+            <h3>Virtual Reality (VR) Airport Tour</h3>
+            <p>Explore airport terminals, lounges, and other key areas from the comfort of your device in a 360-degree VR environment.</p>
+            <div class="vr-box">
+                <!-- VR Tour Simulation Video -->
+                <iframe src="https://www.youtube.com/embed/FobNE5_OSVo" title="VR Airport Tour"></iframe>
+            </div>
+            <div class="button-container">
+                <a href="" target="_blank">Start VR Tour</a>
+            </div>
+        </div>
+
+        <!-- Real-Time Flight Tracking Feature -->
+        <div class="button-container">
+            <a href="flight-tracking.html" target="_blank">Track Your Flight in Real-Time</a>
+        </div>
+    </div>
+
+    <!-- Optional JS Libraries for AR/VR Enhancement -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Custom JavaScript for enhancing AR/VR experiences
+    </script>
+
+</body>
+</html>
