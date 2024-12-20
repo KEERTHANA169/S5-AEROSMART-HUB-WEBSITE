@@ -1,5 +1,5 @@
 # S5-AEROSMART-HUB-WEBSITE
-Here’s a detailed **README.md** for your **Aero SmartHub** project:
+Here’s a detailed **README.md** for **Aero SmartHub** project:
 
 ---
 
